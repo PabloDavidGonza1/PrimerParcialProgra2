@@ -167,7 +167,13 @@ public class Videoclub {
 	 */
 	public Pelicula peliculaMasAntiguaDeGenero(String genero) {
 		
+		if (genero == null) {
+	        return null;
+	    }
+		String generoLimpio = genero.trim().toLowerCase();
+		
 		Pelicula masAntigua = null;
+		
 	
 		for (Pelicula p : peliculas) {
 			if (p.getGenero().equals(genero)) {
