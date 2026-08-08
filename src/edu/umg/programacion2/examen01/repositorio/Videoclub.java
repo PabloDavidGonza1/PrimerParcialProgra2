@@ -140,6 +140,7 @@ public class Videoclub {
 		}
 		return resultado;
 	}
+	
 	/**
 	 * PREGUNTA PRÁCTICA 3 (20 pts): completar peliculaMasAntiguaDeGenero().
 	 * <p>
@@ -165,10 +166,21 @@ public class Videoclub {
 	 *   excepción.
 	 */
 	public Pelicula peliculaMasAntiguaDeGenero(String genero) {
-		// TODO: reemplazar esta línea por la lógica descrita arriba.
-		throw new UnsupportedOperationException("TODO: completar peliculaMasAntiguaDeGenero() en Videoclub");
+		
+		Pelicula masAntigua = null;
+	
+		for (Pelicula p : peliculas) {
+			if (p.getGenero().equals(genero)) {
+				 if (masAntigua == null) {
+		                masAntigua = p;
+		            } else if (p.getAnioEstreno() < masAntigua.getAnioEstreno()) {
+		                masAntigua = p;
+		            }
+			}
+			
+		    }
+		return masAntigua;
 	}
-
 	/**
 	 * RETO OPCIONAL (10 pts extra): completar alquilarPrimeraDisponibleDeGenero().
 	 * <p>
